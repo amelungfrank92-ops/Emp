@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="preload" href="Beratung-Meeting.jpg" as="image" fetchpriority="high">
   <title>Frank Amelung – Finanzberatung auf Empfehlung</title>
   <style>
     :root{--blue:#00325b;--light:#f7f9fa;--accent:#009ee3;--sand:#cbcdb9}
@@ -12,11 +13,17 @@
     /* HERO */
     .hero{
       position:relative; overflow:hidden; color:#fff; text-align:center;
-      background: linear-gradient(180deg,#00325b 0%,#004b84 100%);
+      min-height:360px;
+      background: radial-gradient(circle at 20% 30%, rgba(0,158,227,.25), transparent 45%),
+                  linear-gradient(180deg,#00325b 0%,#004b84 100%);
     }
     .hero img{
       position:absolute; inset:0; width:100%; height:100%;
-      object-fit:cover; opacity:.35; /* Bild sichtbar, Text bleibt lesbar */
+      object-fit:cover; opacity:.7; /* Bild sichtbar, Text bleibt lesbar */
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:linear-gradient(180deg, rgba(0,50,91,.35) 0%, rgba(0,75,132,.65) 100%);
     }
     .hero-inner{position:relative; padding:72px 20px; max-width:980px; margin:0 auto}
     .hero h1{font-family:"Times New Roman",serif; font-size:2.2rem; margin:0 0 8px}
@@ -44,7 +51,8 @@
     .navbtn{
       position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px;
       border-radius:999px; display:flex; align-items:center; justify-content:center;
-      cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px)
+      cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px);
+      color:var(--blue); font-weight:700;
     }
     .navbtn:hover{background:#fff}
     .nav-left{left:6px} .nav-right{right:6px}
@@ -87,8 +95,8 @@
       <div class="tile"><strong>Philipp (38, Selbstständig)</strong><br>Volatilität abfedern, Liquiditätsplan + flexibler Sparpfad.</div>
       <div class="tile"><strong>Emily (30, Ärztin)</strong><br>Seit 4 Jahren in Betreuung – Anpassungen bei Jobwechsel & Elternzeit.</div>
     </div>
-    <div class="navbtn nav-left" onclick="scrollTiles(-1)" aria-label="Zurück">‹</div>
-    <div class="navbtn nav-right" onclick="scrollTiles(1)" aria-label="Weiter">›</div>
+    <button class="navbtn nav-left" type="button" onclick="scrollTiles(-1)" aria-label="Zurück">‹</button>
+    <button class="navbtn nav-right" type="button" onclick="scrollTiles(1)" aria-label="Weiter">›</button>
   </div>
   <p style="opacity:.7; font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
 </section>
@@ -116,6 +124,11 @@
     const w = el.querySelector('.tile')?.offsetWidth || 300;
     el.scrollBy({ left: dir * (w + 16), behavior: 'smooth' });
   }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') scrollTiles(-1);
+    if (event.key === 'ArrowRight') scrollTiles(1);
+  });
 </script>
 
 </body>
