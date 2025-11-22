@@ -1,135 +1,169 @@
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <link rel="preload" href="Beratung-Meeting.jpg" as="image" fetchpriority="high">
-  <title>Frank Amelung – Finanzberatung auf Empfehlung</title>
-  <style>
-    :root{--blue:#00325b;--light:#f7f9fa;--accent:#009ee3;--sand:#cbcdb9}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,sans-serif;color:var(--blue);background:#fff}
-    /* HERO */
-    .hero{
-      position:relative; overflow:hidden; color:#fff; text-align:center;
-      min-height:360px;
-      background: radial-gradient(circle at 20% 30%, rgba(0,158,227,.25), transparent 45%),
-                  linear-gradient(180deg,#00325b 0%,#004b84 100%);
-    }
-    .hero img{
-      position:absolute; inset:0; width:100%; height:100%;
-      object-fit:cover; opacity:.7; /* Bild sichtbar, Text bleibt lesbar */
-    }
-    .hero::after{
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background:linear-gradient(180deg, rgba(0,50,91,.35) 0%, rgba(0,75,132,.65) 100%);
-    }
-    .hero-inner{position:relative; padding:72px 20px; max-width:980px; margin:0 auto}
-    .hero h1{font-family:"Times New Roman",serif; font-size:2.2rem; margin:0 0 8px}
-    .hero p{margin:0; opacity:.95}
-    .btn{display:inline-block; margin-top:16px; padding:12px 22px; background:var(--accent); color:#fff; text-decoration:none; border-radius:8px; font-weight:700}
-
-    section{max-width:980px; margin:0 auto; padding:36px 20px}
-    h2{margin:0 0 12px}
-    /* Grid */
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
-    .card{background:var(--light); padding:18px; border-radius:14px}
-
-    /* Galerie */
-    .gallery-wrap{position:relative}
-    .gallery{
-      display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px;
-      -webkit-overflow-scrolling:touch;
-    }
-    .gallery::-webkit-scrollbar{height:8px}
-    .gallery::-webkit-scrollbar-thumb{background:#d1d6db; border-radius:4px}
-    .tile{
-      flex:0 0 300px; background:var(--light); border-radius:14px; padding:18px;
-      scroll-snap-align:start; box-shadow:0 2px 6px rgba(0,0,0,.06)
-    }
-    .navbtn{
-      position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px;
-      border-radius:999px; display:flex; align-items:center; justify-content:center;
-      cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px);
-      color:var(--blue); font-weight:700;
-    }
-    .navbtn:hover{background:#fff}
-    .nav-left{left:6px} .nav-right{right:6px}
-
-    /* Ablauf */
-    .flow .step{background:var(--sand); padding:16px; border-radius:12px; margin-bottom:12px}
-
-    footer{background:var(--blue); color:#fff; text-align:center; padding:18px; font-size:.9rem}
-  </style>
-</head>
-<body>
-
-<!-- HERO mit Bild + Fallback -->
-<header class="hero">
-  <!-- Bild MUSS exakt so heißen und im gleichen Ordner liegen -->
-  <img src="Beratung-Meeting.jpg" alt="Beratung" onerror="this.style.display='none'">
-  <div class="hero-inner">
-    <h1>Empfohlen von Freunden. Beraten von Frank Amelung.</h1>
-    <p>Unverbindlich. Verständlich. Wirkungsvoll.</p>
-    <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
-  </div>
-</header>
-
-<section>
-  <h2>Für wen ist das?</h2>
-  <div class="grid">
-    <div class="card"><strong>🎓 Berufseinsteiger mit Ambitionen</strong><br>Von Anfang an richtig aufsetzen – flexibel bleiben.</div>
-    <div class="card"><strong>💼 Gutverdiener mit Anspruch</strong><br>Mehr aus dem Geld, ohne Finanzjargon-Kopfschmerz.</div>
-    <div class="card"><strong>👨‍👩‍👦 Familien mit Verantwortung</strong><br>Sicherheit, Planbarkeit und Förderung – ohne Stress.</div>
-  </div>
-</section>
-
-<section>
-  <h2>Erfolge aus der Beratung (Galerie)</h2>
-  <div class="gallery-wrap">
-    <div class="gallery" id="erfolge">
-      <div class="tile"><strong>Vanessa (32, Architektin)</strong><br>200 € mtl. investieren, ~400 € Steuern/Jahr sparen, strukturiertes Portfolio.</div>
-      <div class="tile"><strong>Daniel (35, Jurist)</strong><br>Skepsis → Konzept mit Förderungen & Steueroptimierung, klare ETF-Struktur.</div>
-      <div class="tile"><strong>Mira (29, Erzieherin)</strong><br>„Jetzt verstehe ich Geldanlage – selbst mit kleiner Rate sinnvoll.“</div>
-      <div class="tile"><strong>Philipp (38, Selbstständig)</strong><br>Volatilität abfedern, Liquiditätsplan + flexibler Sparpfad.</div>
-      <div class="tile"><strong>Emily (30, Ärztin)</strong><br>Seit 4 Jahren in Betreuung – Anpassungen bei Jobwechsel & Elternzeit.</div>
-    </div>
-    <button class="navbtn nav-left" type="button" onclick="scrollTiles(-1)" aria-label="Zurück">‹</button>
-    <button class="navbtn nav-right" type="button" onclick="scrollTiles(1)" aria-label="Weiter">›</button>
-  </div>
-  <p style="opacity:.7; font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
-</section>
-
-<section>
-  <h2>So funktioniert’s</h2>
-  <div class="flow">
-    <div class="step"><strong>1. Termin vereinbaren</strong><br>Online, persönlich oder per WhatsApp.</div>
-    <div class="step"><strong>2. Offenes Gespräch</strong><br>Was ist dir wichtig? Wo willst du hin?</div>
-    <div class="step"><strong>3. Dein Finanzplan</strong><br>Individuell, steueroptimiert, förderfähig.</div>
-  </div>
-</section>
-
-<section style="text-align:center">
-  <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
-</section>
-
-<footer>
-  Kostenlos & unverbindlich. DSGVO-konform.
-</footer>
-
-<script>
-  function scrollTiles(dir){
-    const el = document.getElementById('erfolge');
-    const w = el.querySelector('.tile')?.offsetWidth || 300;
-    el.scrollBy({ left: dir * (w + 16), behavior: 'smooth' });
-  }
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') scrollTiles(-1);
-    if (event.key === 'ArrowRight') scrollTiles(1);
-  });
-</script>
-
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index b07edbdd9996c64077e7671e457e92486157f022..6d9afac4b686c3fdff54282b15d25e4b8616960c 100644
+--- a/index.html
++++ b/index.html
+@@ -1,122 +1,154 @@
+ 
+ <!DOCTYPE html>
+ <html lang="de">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1"/>
++  <link rel="preload" href="Beratung-Meeting.jpg" as="image" fetchpriority="high">
+   <title>Frank Amelung – Finanzberatung auf Empfehlung</title>
+   <style>
+     :root{--blue:#00325b;--light:#f7f9fa;--accent:#009ee3;--sand:#cbcdb9}
+     *{box-sizing:border-box}
+     body{margin:0;font-family:Arial,sans-serif;color:var(--blue);background:#fff}
+     /* HERO */
+     .hero{
+       position:relative; overflow:hidden; color:#fff; text-align:center;
+-      background: linear-gradient(180deg,#00325b 0%,#004b84 100%);
++      min-height:360px;
++      background: radial-gradient(circle at 20% 30%, rgba(0,158,227,.25), transparent 45%),
++                  linear-gradient(180deg,#00325b 0%,#004b84 100%);
+     }
+     .hero img{
+       position:absolute; inset:0; width:100%; height:100%;
+-      object-fit:cover; opacity:.35; /* Bild sichtbar, Text bleibt lesbar */
++      object-fit:cover; opacity:.7; /* Bild sichtbar, Text bleibt lesbar */
++    }
++    .hero::after{
++      content:""; position:absolute; inset:0; pointer-events:none;
++      background:linear-gradient(180deg, rgba(0,50,91,.35) 0%, rgba(0,75,132,.65) 100%);
+     }
+     .hero-inner{position:relative; padding:72px 20px; max-width:980px; margin:0 auto}
+     .hero h1{font-family:"Times New Roman",serif; font-size:2.2rem; margin:0 0 8px}
+     .hero p{margin:0; opacity:.95}
+     .btn{display:inline-block; margin-top:16px; padding:12px 22px; background:var(--accent); color:#fff; text-decoration:none; border-radius:8px; font-weight:700}
+ 
+     section{max-width:980px; margin:0 auto; padding:36px 20px}
+     h2{margin:0 0 12px}
+     /* Grid */
+     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+     .card{background:var(--light); padding:18px; border-radius:14px}
+ 
++    /* Medienbereich */
++    .media-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px}
++    .media-card{background:var(--light); padding:16px; border-radius:14px; box-shadow:0 2px 6px rgba(0,0,0,.06)}
++    .media-card video,.media-card img{width:100%; border-radius:10px; display:block}
++
+     /* Galerie */
+     .gallery-wrap{position:relative}
+     .gallery{
+       display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px;
+       -webkit-overflow-scrolling:touch;
+     }
+     .gallery::-webkit-scrollbar{height:8px}
+     .gallery::-webkit-scrollbar-thumb{background:#d1d6db; border-radius:4px}
+     .tile{
+       flex:0 0 300px; background:var(--light); border-radius:14px; padding:18px;
+       scroll-snap-align:start; box-shadow:0 2px 6px rgba(0,0,0,.06)
+     }
+     .navbtn{
+       position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px;
+       border-radius:999px; display:flex; align-items:center; justify-content:center;
+-      cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px)
++      cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px);
++      color:var(--blue); font-weight:700;
+     }
+     .navbtn:hover{background:#fff}
+     .nav-left{left:6px} .nav-right{right:6px}
+ 
+     /* Ablauf */
+     .flow .step{background:var(--sand); padding:16px; border-radius:12px; margin-bottom:12px}
+ 
+     footer{background:var(--blue); color:#fff; text-align:center; padding:18px; font-size:.9rem}
+   </style>
+ </head>
+ <body>
+ 
+ <!-- HERO mit Bild + Fallback -->
+ <header class="hero">
+   <!-- Bild MUSS exakt so heißen und im gleichen Ordner liegen -->
+   <img src="Beratung-Meeting.jpg" alt="Beratung" onerror="this.style.display='none'">
+   <div class="hero-inner">
+     <h1>Empfohlen von Freunden. Beraten von Frank Amelung.</h1>
+     <p>Unverbindlich. Verständlich. Wirkungsvoll.</p>
+     <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
+   </div>
+ </header>
+ 
+ <section>
+   <h2>Für wen ist das?</h2>
+   <div class="grid">
+     <div class="card"><strong>🎓 Berufseinsteiger mit Ambitionen</strong><br>Von Anfang an richtig aufsetzen – flexibel bleiben.</div>
+     <div class="card"><strong>💼 Gutverdiener mit Anspruch</strong><br>Mehr aus dem Geld, ohne Finanzjargon-Kopfschmerz.</div>
+     <div class="card"><strong>👨‍👩‍👦 Familien mit Verantwortung</strong><br>Sicherheit, Planbarkeit und Förderung – ohne Stress.</div>
+   </div>
+ </section>
+ 
++<section>
++  <h2>Video & Blick ins Beratungsgespräch</h2>
++  <div class="media-grid">
++    <div class="media-card">
++      <video src="Film%20am%2022.11.25%20um%2021.30.mp4" controls preload="metadata" poster="Beratung-Meeting.jpg">
++        Ihr Browser unterstützt das Video-Tag nicht. Laden Sie die Datei herunter: <a href="Film%20am%2022.11.25%20um%2021.30.mp4">Video</a>.
++      </video>
++    </div>
++    <div class="media-card">
++      <img src="Beratung-Meeting.jpg" alt="Beratungssituation mit Frank Amelung">
++    </div>
++  </div>
++</section>
++
+ <section>
+   <h2>Erfolge aus der Beratung (Galerie)</h2>
+   <div class="gallery-wrap">
+     <div class="gallery" id="erfolge">
+       <div class="tile"><strong>Vanessa (32, Architektin)</strong><br>200 € mtl. investieren, ~400 € Steuern/Jahr sparen, strukturiertes Portfolio.</div>
+       <div class="tile"><strong>Daniel (35, Jurist)</strong><br>Skepsis → Konzept mit Förderungen & Steueroptimierung, klare ETF-Struktur.</div>
+       <div class="tile"><strong>Mira (29, Erzieherin)</strong><br>„Jetzt verstehe ich Geldanlage – selbst mit kleiner Rate sinnvoll.“</div>
+       <div class="tile"><strong>Philipp (38, Selbstständig)</strong><br>Volatilität abfedern, Liquiditätsplan + flexibler Sparpfad.</div>
+       <div class="tile"><strong>Emily (30, Ärztin)</strong><br>Seit 4 Jahren in Betreuung – Anpassungen bei Jobwechsel & Elternzeit.</div>
+     </div>
+-    <div class="navbtn nav-left" onclick="scrollTiles(-1)" aria-label="Zurück">‹</div>
+-    <div class="navbtn nav-right" onclick="scrollTiles(1)" aria-label="Weiter">›</div>
++    <button class="navbtn nav-left" type="button" onclick="scrollTiles(-1)" aria-label="Zurück">‹</button>
++    <button class="navbtn nav-right" type="button" onclick="scrollTiles(1)" aria-label="Weiter">›</button>
+   </div>
+   <p style="opacity:.7; font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
+ </section>
+ 
+ <section>
+   <h2>So funktioniert’s</h2>
+   <div class="flow">
+     <div class="step"><strong>1. Termin vereinbaren</strong><br>Online, persönlich oder per WhatsApp.</div>
+     <div class="step"><strong>2. Offenes Gespräch</strong><br>Was ist dir wichtig? Wo willst du hin?</div>
+     <div class="step"><strong>3. Dein Finanzplan</strong><br>Individuell, steueroptimiert, förderfähig.</div>
+   </div>
+ </section>
+ 
+ <section style="text-align:center">
+   <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
+ </section>
+ 
+ <footer>
+   Kostenlos & unverbindlich. DSGVO-konform.
+ </footer>
+ 
+ <script>
+   function scrollTiles(dir){
+     const el = document.getElementById('erfolge');
+     const w = el.querySelector('.tile')?.offsetWidth || 300;
+     el.scrollBy({ left: dir * (w + 16), behavior: 'smooth' });
+   }
++
++  document.addEventListener('keydown', (event) => {
++    if (event.key === 'ArrowLeft') scrollTiles(-1);
++    if (event.key === 'ArrowRight') scrollTiles(1);
++  });
+ </script>
+ 
+ </body>
+ </html>
+ 
+EOF
+)
