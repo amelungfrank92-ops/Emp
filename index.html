@@ -3,20 +3,39 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Frank Amelung – Finanzberatung auf Empfehlung</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; color: #00325b; background:#fff; }
-    header { background:#00325b; color:#fff; padding: 64px 20px; text-align:center; }
-    header h1 { font-family: "Times New Roman", serif; font-size: 2.2rem; margin: 0 0 8px; }
-    header p { margin: 0; opacity: .95; }
-    .btn { display:inline-block; margin-top:16px; padding:12px 22px; background:#009ee3; color:#fff; text-decoration:none; border-radius:6px; font-weight:700; }
-    section { max-width: 900px; margin: 0 auto; padding: 32px 20px; }
-    video { width:100%; max-width: 720px; display:block; margin: 0 auto; border-radius:10px; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:18px; }
-    .card { background:#f7f9fa; padding:18px; border-radius:10px; }
-    .flow div { background:#cbcdb9; padding:16px; border-radius:10px; margin-bottom:12px; }
-    footer { background:#00325b; color:#fff; text-align:center; padding:18px; font-size:.9rem; }
+    :root{
+      --blue:#00325b; --light:#f7f9fa; --accent:#009ee3; --sand:#cbcdb9;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Arial, sans-serif; color:var(--blue); background:#fff}
+    header{
+      background:#00325b; color:#fff; text-align:center; padding:72px 20px;
+    }
+    header h1{font-family:"Times New Roman",serif; font-size:2.2rem; margin:0 0 8px}
+    header p{margin:0; opacity:.95}
+    .btn{display:inline-block; margin-top:16px; padding:12px 22px; background:var(--accent); color:#fff; text-decoration:none; border-radius:8px; font-weight:700}
+    section{max-width:980px; margin:0 auto; padding:36px 20px}
+    h2{margin:0 0 12px}
+    /* Video */
+    video{width:100%; max-width:720px; display:block; margin:0 auto; border-radius:10px; background:#000}
+    /* Grid */
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+    .card{background:var(--light); padding:18px; border-radius:14px}
+    /* Galerie */
+    .gallery-wrap{position:relative; overflow:hidden}
+    .gallery{display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px}
+    .gallery::-webkit-scrollbar{height:8px}
+    .gallery::-webkit-scrollbar-thumb{background:#d1d6db; border-radius:4px}
+    .tile{flex:0 0 300px; background:var(--light); border-radius:14px; padding:18px; scroll-snap-align:start; box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .navbtn{position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; border-radius:999px; display:flex; align-items:center; justify-content:center; cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px)}
+    .navbtn:hover{background:#fff}
+    .nav-left{left:6px} .nav-right{right:6px}
+    /* Ablauf */
+    .flow .step{background:var(--sand); padding:16px; border-radius:12px; margin-bottom:12px}
+    footer{background:var(--blue); color:#fff; text-align:center; padding:18px; font-size:.9rem}
   </style>
 </head>
 <body>
@@ -30,47 +49,52 @@
 <section>
   <h2 style="text-align:center;">Kurzvorstellung</h2>
   <video controls preload="metadata" playsinline>
+    <!-- Der Dateiname muss exakt so neben der index.html liegen: -->
     <source src="Film am 22.11.25 um 21.30.mp4" type="video/mp4" />
-    Dein Browser unterstützt das Video nicht. Lade es hier herunter:
-    <a href="Film am 22.11.25 um 21.30.mp4">Video öffnen</a>.
+    Dein Browser unterstützt das Video nicht. <a href="Film am 22.11.25 um 21.30.mp4">Video öffnen</a>.
   </video>
-  <p style="margin-top: 16px;">
-    Hi, ich bin Frank Amelung. Wenn du auf dieser Seite gelandet bist, wurdest du wahrscheinlich empfohlen – und das ist für mich das größte Kompliment. 
-    Bei mir geht’s nicht um Versicherungsverkauf oder kompliziertes Blabla, sondern um <strong>mehr aus deinem Geld</strong> – mit Plan, Struktur und dem Gefühl, dass du verstanden wirst. 
-    Das Erstgespräch ist kostenlos. Wir schauen: wo du stehst, was du willst, und ob ich der richtige Partner bin. Wenn’s passt, starten wir.
+  <p style="margin-top:16px">
+    Hi, ich bin Frank Amelung. Wenn du auf dieser Seite gelandet bist, wurdest du wahrscheinlich empfohlen.
+    Bei mir geht’s nicht um Verkaufsdruck, sondern um <strong>Plan, Struktur</strong> und das Gefühl, dass du verstanden wirst.
+    Das Erstgespräch ist kostenlos: Wir schauen, wo du stehst, was du willst und ob ich der richtige Partner bin.
   </p>
 </section>
 
 <section>
   <h2>Für wen ist das?</h2>
   <div class="grid">
-    <div class="card"><strong>🎓 Berufseinsteiger mit Ambitionen</strong><br>Von Anfang an die Weichen richtig stellen – und trotzdem flexibel bleiben.</div>
-    <div class="card"><strong>💼 Gutverdiener mit Anspruch</strong><br>Mehr aus dem Geld machen, ohne sich durch Finanzjargon zu quälen.</div>
-    <div class="card"><strong>👨‍👩‍👦 Familien mit Verantwortung</strong><br>Sicherheit, Planbarkeit und gute Förderung – ohne Finanzstress.</div>
+    <div class="card"><strong>🎓 Berufseinsteiger mit Ambitionen</strong><br>Von Anfang an richtig aufsetzen – flexibel bleiben.</div>
+    <div class="card"><strong>💼 Gutverdiener mit Anspruch</strong><br>Mehr aus dem Geld, ohne Finanzjargon-Kopfschmerz.</div>
+    <div class="card"><strong>👨‍👩‍👦 Familien mit Verantwortung</strong><br>Sicherheit, Planbarkeit und Förderung – ohne Stress.</div>
   </div>
 </section>
 
 <section>
-  <h2>Erfolge aus der Beratung</h2>
-  <div class="grid">
-    <div class="card"><strong>Vanessa (32, Architektin)</strong><br>Investiert 200 €/Monat, spart 400 €/Jahr Steuern und baut planbar Vermögen auf.</div>
-    <div class="card"><strong>Daniel (35, Jurist)</strong><br>Startete skeptisch – nutzt heute Förderungen gezielt und optimiert steuerlich.</div>
-    <div class="card"><strong>Mira (29, Erzieherin)</strong><br>„Endlich verstehe ich Geldanlage – und das sogar mit kleinem Einkommen.“</div>
-    <div class="card"><strong>Philipp (38, Selbstständig)</strong><br>Flexible Lösungen trotz unregelmäßigem Einkommen – endlich Planbarkeit.</div>
-    <div class="card"><strong>Emily (30, Ärztin)</strong><br>Seit 4 Jahren in Betreuung – Konzepte mitgewachsen.</div>
+  <h2>Erfolge aus der Beratung (Galerie)</h2>
+  <div class="gallery-wrap">
+    <div class="gallery" id="erfolge">
+      <div class="tile"><strong>Vanessa (32, Architektin)</strong><br>200 € mtl. investieren, ~400 € Steuern/Jahr sparen, strukturiertes Portfolio.</div>
+      <div class="tile"><strong>Daniel (35, Jurist)</strong><br>Skepsis → Konzept mit Förderungen & Steueroptimierung, klare ETF-Struktur.</div>
+      <div class="tile"><strong>Mira (29, Erzieherin)</strong><br>„Jetzt verstehe ich Geldanlage – selbst mit kleiner Rate sinnvoll.“</div>
+      <div class="tile"><strong>Philipp (38, Selbstständig)</strong><br>Volatilität abfedern, Liquiditätsplan + flexibler Sparpfad.</div>
+      <div class="tile"><strong>Emily (30, Ärztin)</strong><br>Seit 4 Jahren in Betreuung – Anpassungen bei Jobwechsel & Elternzeit.</div>
+    </div>
+    <div class="navbtn nav-left" onclick="scrollTiles(-1)" aria-label="Zurück">‹</div>
+    <div class="navbtn nav-right" onclick="scrollTiles(1)" aria-label="Weiter">›</div>
   </div>
+  <p style="opacity:.7; font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
 </section>
 
 <section>
   <h2>So funktioniert’s</h2>
   <div class="flow">
-    <div><strong>1. Termin vereinbaren</strong><br>Online, persönlich oder per WhatsApp.</div>
-    <div><strong>2. Offenes Gespräch</strong><br>Was ist dir wichtig? Wo willst du hin?</div>
-    <div><strong>3. Dein Finanzplan</strong><br>Individuell, steueroptimiert, förderfähig.</div>
+    <div class="step"><strong>1. Termin vereinbaren</strong><br>Online, persönlich oder per WhatsApp.</div>
+    <div class="step"><strong>2. Offenes Gespräch</strong><br>Was ist dir wichtig? Wo willst du hin?</div>
+    <div class="step"><strong>3. Dein Finanzplan</strong><br>Individuell, steueroptimiert, förderfähig.</div>
   </div>
 </section>
 
-<section style="text-align:center;">
+<section style="text-align:center">
   <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
 </section>
 
@@ -78,5 +102,16 @@
   Kostenlos & unverbindlich. DSGVO-konform.
 </footer>
 
+<script>
+  function scrollTiles(dir){
+    const el = document.getElementById('erfolge');
+    const w = el.querySelector('.tile')?.offsetWidth || 300;
+    el.scrollBy({ left: dir * (w + 16), behavior: 'smooth' });
+  }
+</script>
+
 </body>
 </html>
+
+
+ 
