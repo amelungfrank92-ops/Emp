@@ -1,13 +1,10 @@
 
 <!DOCTYPE html>
 <html lang="de">
-<html lang="bg">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Frank Amelung – Finanzberatung auf Empfehlung</title>
-  <link rel="preload" href="Beratung-Meeting.jpg" as="image" fetchpriority="high">
-  <title>Данаил Игнатовски – Финансово консултиране по препоръка</title>
   <style>
     :root{--blue:#00325b;--light:#f7f9fa;--accent:#009ee3;--sand:#cbcdb9}
     *{box-sizing:border-box}
@@ -16,18 +13,10 @@
     .hero{
       position:relative; overflow:hidden; color:#fff; text-align:center;
       background: linear-gradient(180deg,#00325b 0%,#004b84 100%);
-      min-height:360px;
-      background: radial-gradient(circle at 20% 30%, rgba(0,158,227,.25), transparent 45%),
-                  linear-gradient(180deg,#00325b 0%,#004b84 100%);
     }
     .hero img{
       position:absolute; inset:0; width:100%; height:100%;
       object-fit:cover; opacity:.35; /* Bild sichtbar, Text bleibt lesbar */
-      object-fit:cover; opacity:.7; /* Bild sichtbar, Text bleibt lesbar */
-    }
-    .hero::after{
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background:linear-gradient(180deg, rgba(0,50,91,.35) 0%, rgba(0,75,132,.65) 100%);
     }
     .hero-inner{position:relative; padding:72px 20px; max-width:980px; margin:0 auto}
     .hero h1{font-family:"Times New Roman",serif; font-size:2.2rem; margin:0 0 8px}
@@ -39,11 +28,6 @@
     /* Grid */
     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
     .card{background:var(--light); padding:18px; border-radius:14px}
-
-    /* Medienbereich */
-    .media-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px}
-    .media-card{background:var(--light); padding:16px; border-radius:14px; box-shadow:0 2px 6px rgba(0,0,0,.06)}
-    .media-card video,.media-card img{width:100%; border-radius:10px; display:block}
 
     /* Galerie */
     .gallery-wrap{position:relative}
@@ -61,8 +45,6 @@
       position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px;
       border-radius:999px; display:flex; align-items:center; justify-content:center;
       cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px)
-      cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px);
-      color:var(--blue); font-weight:700;
     }
     .navbtn:hover{background:#fff}
     .nav-left{left:6px} .nav-right{right:6px}
@@ -79,47 +61,24 @@
 <header class="hero">
   <!-- Bild MUSS exakt so heißen und im gleichen Ordner liegen -->
   <img src="Beratung-Meeting.jpg" alt="Beratung" onerror="this.style.display='none'">
-  <img src="Beratung-Meeting.jpg" alt="Консултация" onerror="this.style.display='none'">
   <div class="hero-inner">
     <h1>Empfohlen von Freunden. Beraten von Frank Amelung.</h1>
     <p>Unverbindlich. Verständlich. Wirkungsvoll.</p>
     <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
-    <h1>Препоръчан от приятели. Консултиран от Данаил Игнатовски.</h1>
-    <p>Без задължение. Разбираемо. Резултатно.</p>
-    <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Започни безплатно</a>
   </div>
 </header>
 
 <section>
   <h2>Für wen ist das?</h2>
-  <h2>За кого е това?</h2>
   <div class="grid">
     <div class="card"><strong>🎓 Berufseinsteiger mit Ambitionen</strong><br>Von Anfang an richtig aufsetzen – flexibel bleiben.</div>
     <div class="card"><strong>💼 Gutverdiener mit Anspruch</strong><br>Mehr aus dem Geld, ohne Finanzjargon-Kopfschmerz.</div>
     <div class="card"><strong>👨‍👩‍👦 Familien mit Verantwortung</strong><br>Sicherheit, Planbarkeit und Förderung – ohne Stress.</div>
-    <div class="card"><strong>🎓 Млади професионалисти с амбиции</strong><br>Правилен старт и гъвкавост от първия ден.</div>
-    <div class="card"><strong>💼 Успели специалисти с високи изисквания</strong><br>Повече стойност от парите без сложен жаргон.</div>
-    <div class="card"><strong>👨‍👩‍👦 Семейства с отговорности</strong><br>Сигурност, предвидимост и подкрепа – без излишен стрес.</div>
-  </div>
-</section>
-
-<section>
-  <h2>Видео и поглед към консултацията</h2>
-  <div class="media-grid">
-    <div class="media-card">
-      <video src="Film%20am%2022.11.25%20um%2021.30.mp4" controls preload="metadata" poster="Beratung-Meeting.jpg">
-        Вашият браузър не поддържа видео елемента. Изтеглете файла: <a href="Film%20am%2022.11.25%20um%2021.30.mp4">Видео</a>.
-      </video>
-    </div>
-    <div class="media-card">
-      <img src="Beratung-Meeting.jpg" alt="Консултация с Данаил Игнатовски">
-    </div>
   </div>
 </section>
 
 <section>
   <h2>Erfolge aus der Beratung (Galerie)</h2>
-  <h2>Успехи от консултациите (галерия)</h2>
   <div class="gallery-wrap">
     <div class="gallery" id="erfolge">
       <div class="tile"><strong>Vanessa (32, Architektin)</strong><br>200 € mtl. investieren, ~400 € Steuern/Jahr sparen, strukturiertes Portfolio.</div>
@@ -127,42 +86,28 @@
       <div class="tile"><strong>Mira (29, Erzieherin)</strong><br>„Jetzt verstehe ich Geldanlage – selbst mit kleiner Rate sinnvoll.“</div>
       <div class="tile"><strong>Philipp (38, Selbstständig)</strong><br>Volatilität abfedern, Liquiditätsplan + flexibler Sparpfad.</div>
       <div class="tile"><strong>Emily (30, Ärztin)</strong><br>Seit 4 Jahren in Betreuung – Anpassungen bei Jobwechsel & Elternzeit.</div>
-      <div class="tile"><strong>Ванеса (32, архитект)</strong><br>Инвестира 200 € месечно, спестява ~400 € данъци годишно, подредено портфолио.</div>
-      <div class="tile"><strong>Даниел (35, юрист)</strong><br>От скептицизъм до план с субсидии и данъчна оптимизация, ясна ETF структура.</div>
-      <div class="tile"><strong>Мира (29, възпитател)</strong><br>„Сега разбирам инвестирането – има смисъл дори с малка вноска.“</div>
-      <div class="tile"><strong>Филип (38, самонает)</strong><br>Омекотена волатилност, план за ликвидност и гъвкав спестовен път.</div>
-      <div class="tile"><strong>Емили (30, лекар)</strong><br>В грижа вече 4 години – корекции при смяна на работа и родителски отпуск.</div>
     </div>
     <div class="navbtn nav-left" onclick="scrollTiles(-1)" aria-label="Zurück">‹</div>
     <div class="navbtn nav-right" onclick="scrollTiles(1)" aria-label="Weiter">›</div>
-    <button class="navbtn nav-left" type="button" onclick="scrollTiles(-1)" aria-label="Назад">‹</button>
-    <button class="navbtn nav-right" type="button" onclick="scrollTiles(1)" aria-label="Напред">›</button>
   </div>
   <p style="opacity:.7; font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
-  <p style="opacity:.7; font-size:.9rem">Съвет: плъзнете с пръст или използвайте стрелките.</p>
 </section>
 
 <section>
   <h2>So funktioniert’s</h2>
-  <h2>Как работи?</h2>
   <div class="flow">
     <div class="step"><strong>1. Termin vereinbaren</strong><br>Online, persönlich oder per WhatsApp.</div>
     <div class="step"><strong>2. Offenes Gespräch</strong><br>Was ist dir wichtig? Wo willst du hin?</div>
     <div class="step"><strong>3. Dein Finanzplan</strong><br>Individuell, steueroptimiert, förderfähig.</div>
-    <div class="step"><strong>1. Запази час</strong><br>Онлайн, лично или по WhatsApp.</div>
-    <div class="step"><strong>2. Открит разговор</strong><br>Какво е важно за теб? Накъде искаш да вървиш?</div>
-    <div class="step"><strong>3. Твоят финансов план</strong><br>Персонализиран, данъчно оптимизиран и с възможни субсидии.</div>
   </div>
 </section>
 
 <section style="text-align:center">
   <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
-  <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink"target="_blank">Започни безплатно</a>
 </section>
 
 <footer>
   Kostenlos & unverbindlich. DSGVO-konform.
-  Безплатно и без задължение. Съобразено с GDPR.
 </footer>
 
 <script>
@@ -171,11 +116,6 @@
     const w = el.querySelector('.tile')?.offsetWidth || 300;
     el.scrollBy({ left: dir * (w + 16), behavior: 'smooth' });
   }
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') scrollTiles(-1);
-    if (event.key === 'ArrowRight') scrollTiles(1);
-  });
 </script>
 
 </body>
