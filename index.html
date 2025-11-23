@@ -2,62 +2,53 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Frank Amelung – Finanzberatung auf Empfehlung</title>
   <style>
     :root{--blue:#00325b;--light:#f7f9fa;--accent:#009ee3;--sand:#cbcdb9}
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,sans-serif;color:var(--blue);background:#fff}
-    /* HERO */
-    .hero{
-      position:relative; overflow:hidden; color:#fff; text-align:center;
-      background: linear-gradient(180deg,#00325b 0%,#004b84 100%);
-    }
-    .hero img{
-      position:absolute; inset:0; width:100%; height:100%;
-      object-fit:cover; opacity:.35; /* Bild sichtbar, Text bleibt lesbar */
-    }
-    .hero-inner{position:relative; padding:72px 20px; max-width:980px; margin:0 auto}
-    .hero h1{font-family:"Times New Roman",serif; font-size:2.2rem; margin:0 0 8px}
-    .hero p{margin:0; opacity:.95}
-    .btn{display:inline-block; margin-top:16px; padding:12px 22px; background:var(--accent); color:#fff; text-decoration:none; border-radius:8px; font-weight:700}
 
-    section{max-width:980px; margin:0 auto; padding:36px 20px}
+    /* HERO mit Bild + Fallback */
+    .hero{position:relative;overflow:hidden;color:#fff;text-align:center;
+      background:linear-gradient(180deg,#00325b 0%,#004b84 100%)}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+    .hero-inner{position:relative;padding:72px 20px;max-width:980px;margin:0 auto}
+    .hero h1{font-family:"Times New Roman",serif;font-size:2.2rem;margin:0 0 8px}
+    .hero p{margin:0;opacity:.95}
+    .btn{display:inline-block;margin-top:16px;padding:12px 22px;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;font-weight:700}
+
+    section{max-width:980px;margin:0 auto;padding:36px 20px}
     h2{margin:0 0 12px}
-    /* Grid */
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
-    .card{background:var(--light); padding:18px; border-radius:14px}
 
-    /* Galerie */
+    /* Video */
+    .video-wrap{margin-top:8px}
+    video{width:100%;max-width:720px;display:block;margin:0 auto;border-radius:10px;background:#000}
+
+    /* Grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{background:var(--light);padding:18px;border-radius:14px}
+
+    /* Galerie horizontal */
     .gallery-wrap{position:relative}
-    .gallery{
-      display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px;
-      -webkit-overflow-scrolling:touch;
-    }
+    .gallery{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}
     .gallery::-webkit-scrollbar{height:8px}
-    .gallery::-webkit-scrollbar-thumb{background:#d1d6db; border-radius:4px}
-    .tile{
-      flex:0 0 300px; background:var(--light); border-radius:14px; padding:18px;
-      scroll-snap-align:start; box-shadow:0 2px 6px rgba(0,0,0,.06)
-    }
-    .navbtn{
-      position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px;
-      border-radius:999px; display:flex; align-items:center; justify-content:center;
-      cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px)
-    }
+    .gallery::-webkit-scrollbar-thumb{background:#d1d6db;border-radius:4px}
+    .tile{flex:0 0 300px;background:var(--light);border-radius:14px;padding:18px;scroll-snap-align:start;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    .navbtn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;background:#ffffffcc;border:1px solid #e5e7eb;backdrop-filter:blur(4px)}
     .navbtn:hover{background:#fff}
-    .nav-left{left:6px} .nav-right{right:6px}
+    .nav-left{left:6px}.nav-right{right:6px}
 
     /* Ablauf */
-    .flow .step{background:var(--sand); padding:16px; border-radius:12px; margin-bottom:12px}
+    .flow .step{background:var(--sand);padding:16px;border-radius:12px;margin-bottom:12px}
 
-    footer{background:var(--blue); color:#fff; text-align:center; padding:18px; font-size:.9rem}
+    footer{background:var(--blue);color:#fff;text-align:center;padding:18px;font-size:.9rem}
   </style>
 </head>
 <body>
 
-<!-- HERO mit Bild + Fallback -->
+<!-- HERO -->
 <header class="hero">
   <!-- Bild MUSS exakt so heißen und im gleichen Ordner liegen -->
   <img src="Beratung-Meeting.jpg" alt="Beratung" onerror="this.style.display='none'">
@@ -68,6 +59,23 @@
   </div>
 </header>
 
+<!-- VIDEO-BEREICH -->
+<section class="video-wrap">
+  <h2 style="text-align:center;">Kurzvorstellung</h2>
+  <video controls preload="metadata" playsinline>
+    <!-- Quelle 1: lokaler Pfad aus deinem Upload-Verlauf (für lokale Tests) -->
+    <source src="/mnt/data/Film am 22.11.25 um 21.30.mp4" type="video/mp4">
+    <!-- Quelle 2: relativer Pfad für GitHub Pages (Datei muss im gleichen Ordner liegen) -->
+    <source src="Film am 22.11.25 um 21.30.mp4" type="video/mp4">
+    Dein Browser unterstützt das Video nicht. <a href="Film am 22.11.25 um 21.30.mp4">Video öffnen</a>.
+  </video>
+  <p style="margin-top:16px">
+    Bei mir geht’s nicht um Verkaufsdruck, sondern um <strong>Plan, Struktur</strong> und das Gefühl, dass du verstanden wirst. 
+    Das Erstgespräch ist kostenlos: Wir schauen, wo du stehst, was du willst und ob ich der richtige Partner bin.
+  </p>
+</section>
+
+<!-- ZIELGRUPPEN -->
 <section>
   <h2>Für wen ist das?</h2>
   <div class="grid">
@@ -77,6 +85,7 @@
   </div>
 </section>
 
+<!-- GALERIE: ERFOLGE -->
 <section>
   <h2>Erfolge aus der Beratung (Galerie)</h2>
   <div class="gallery-wrap">
@@ -90,9 +99,10 @@
     <div class="navbtn nav-left" onclick="scrollTiles(-1)" aria-label="Zurück">‹</div>
     <div class="navbtn nav-right" onclick="scrollTiles(1)" aria-label="Weiter">›</div>
   </div>
-  <p style="opacity:.7; font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
+  <p style="opacity:.7;font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
 </section>
 
+<!-- ABLAUF -->
 <section>
   <h2>So funktioniert’s</h2>
   <div class="flow">
