@@ -9,105 +9,54 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:Arial,sans-serif;color:var(--blue);background:#fff}
     /* HERO */
-    .hero{
-      position:relative; overflow:hidden; color:#fff; text-align:center;
-      background: linear-gradient(180deg,#00325b 0%,#004b84 100%);
-    }
-    .hero img{
-      position:absolute; inset:0; width:100%; height:100%;
-      object-fit:cover; opacity:.35; /* Bild sichtbar, Text bleibt lesbar */
-    }
-    .hero-inner{position:relative; padding:72px 20px; max-width:980px; margin:0 auto}
-    .hero h1{font-family:"Times New Roman",serif; font-size:2.2rem; margin:0 0 8px}
-    .hero p{margin:0; opacity:.95}
-    .btn{display:inline-block; margin-top:16px; padding:12px 22px; background:var(--accent); color:#fff; text-decoration:none; border-radius:8px; font-weight:700}
-
-    section{max-width:980px; margin:0 auto; padding:36px 20px}
-    h2{margin:0 0 12px}
-    /* Grid */
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
-    .card{background:var(--light); padding:18px; border-radius:14px}
-
-    /* Galerie */
-    .gallery-wrap{position:relative}
-    .gallery{
-      display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px;
-      -webkit-overflow-scrolling:touch;
-    }
-    .gallery::-webkit-scrollbar{height:8px}
-    .gallery::-webkit-scrollbar-thumb{background:#d1d6db; border-radius:4px}
-    .tile{
-      flex:0 0 300px; background:var(--light); border-radius:14px; padding:18px;
-      scroll-snap-align:start; box-shadow:0 2px 6px rgba(0,0,0,.06)
-    }
-    .navbtn{
-      position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px;
-      border-radius:999px; display:flex; align-items:center; justify-content:center;
-      cursor:pointer; user-select:none; background:#ffffffcc; border:1px solid #e5e7eb; backdrop-filter:blur(4px)
-    }
-    .navbtn:hover{background:#fff}
-    .nav-left{left:6px} .nav-right{right:6px}
-
-    /* Ablauf */
-    .flow .step{background:var(--sand); padding:16px; border-radius:12px; margin-bottom:12px}
-
-    footer{background:var(--blue); color:#fff; text-align:center; padding:18px; font-size:.9rem}
-  </style>
-</head>
-<body>
-
-<!-- HERO mit Bild + Fallback -->
-<header class="hero">
-  <!-- Bild MUSS exakt so heißen und im gleichen Ordner liegen -->
-  <img src="Beratung-Meeting.jpg" alt="Beratung" onerror="this.style.display='none'">
-  <div class="hero-inner">
-    <h1>Empfohlen von Freunden. Beraten von Frank Amelung.</h1>
-    <p>Unverbindlich. Verständlich. Wirkungsvoll.</p>
-    <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
+    <!-- HERO -->
+<header class="hero" style="position:relative;overflow:hidden;color:#fff;text-align:center;background:linear-gradient(180deg,#00325b 0%,#004b84 100%)">
+  <img src="Beratung-Meeting.jpg" alt="Beratung" onerror="this.style.display='none'"
+       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35">
+  <div class="hero-inner" style="position:relative;padding:72px 20px;max-width:980px;margin:0 auto">
+    <h1 style="font-family:'Times New Roman',serif;font-size:2.2rem;margin:0 0 8px">Empfohlen von Freunden. Beraten von Frank Amelung.</h1>
+    <p style="margin:0;opacity:.95">Unverbindlich. Verständlich. Wirkungsvoll.</p>
+    <a href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink"
+       target="_blank"
+       style="display:inline-block;margin-top:16px;padding:12px 22px;background:#009ee3;color:#fff;text-decoration:none;border-radius:8px;font-weight:700">
+       Jetzt kostenlos starten
+    </a>
   </div>
 </header>
 
-<section>
-  <h2>Für wen ist das?</h2>
-  <div class="grid">
-    <div class="card"><strong>🎓 Berufseinsteiger mit Ambitionen</strong><br>Von Anfang an richtig aufsetzen – flexibel bleiben.</div>
-    <div class="card"><strong>💼 Gutverdiener mit Anspruch</strong><br>Mehr aus dem Geld, ohne Finanzjargon-Kopfschmerz.</div>
-    <div class="card"><strong>👨‍👩‍👦 Familien mit Verantwortung</strong><br>Sicherheit, Planbarkeit und Förderung – ohne Stress.</div>
-  </div>
+<!-- VIDEO -->
+<section style="max-width:980px;margin:0 auto;padding:36px 20px">
+  <h2 style="margin:0 0 12px;text-align:center">Kurzvorstellung</h2>
+  <video controls preload="metadata" playsinline poster="Beratung-Meeting.jpg"
+         style="width:100%;max-width:720px;display:block;margin:0 auto;border-radius:10px;background:#000">
+    <source src="frank.mp4" type="video/mp4">
+    Dein Browser unterstützt das Video nicht. <a href="frank.mp4">Video öffnen</a>.
+  </video>
+  <p style="margin-top:16px">
+    Bei mir geht’s nicht um Verkaufsdruck, sondern um <strong>Plan, Struktur</strong> und das Gefühl, dass du verstanden wirst.
+    Das Erstgespräch ist kostenlos: Wir schauen, wo du stehst, was du willst und ob ich der richtige Partner bin.
+  </p>
 </section>
 
-<section>
-  <h2>Erfolge aus der Beratung (Galerie)</h2>
-  <div class="gallery-wrap">
-    <div class="gallery" id="erfolge">
-      <div class="tile"><strong>Vanessa (32, Architektin)</strong><br>200 € mtl. investieren, ~400 € Steuern/Jahr sparen, strukturiertes Portfolio.</div>
-      <div class="tile"><strong>Daniel (35, Jurist)</strong><br>Skepsis → Konzept mit Förderungen & Steueroptimierung, klare ETF-Struktur.</div>
-      <div class="tile"><strong>Mira (29, Erzieherin)</strong><br>„Jetzt verstehe ich Geldanlage – selbst mit kleiner Rate sinnvoll.“</div>
-      <div class="tile"><strong>Philipp (38, Selbstständig)</strong><br>Volatilität abfedern, Liquiditätsplan + flexibler Sparpfad.</div>
-      <div class="tile"><strong>Emily (30, Ärztin)</strong><br>Seit 4 Jahren in Betreuung – Anpassungen bei Jobwechsel & Elternzeit.</div>
+<!-- GALERIE -->
+<section style="max-width:980px;margin:0 auto;padding:36px 20px">
+  <h2 style="margin:0 0 12px">Erfolge aus der Beratung (Galerie)</h2>
+  <div class="gallery-wrap" style="position:relative">
+    <div class="gallery" id="erfolge"
+         style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch">
+      <div class="tile" style="flex:0 0 300px;background:#f7f9fa;border-radius:14px;padding:18px;scroll-snap-align:start;box-shadow:0 2px 6px rgba(0,0,0,.06)"><strong>Vanessa (32, Architektin)</strong><br>200 € mtl. investieren, ~400 € Steuern/Jahr sparen, strukturiertes Portfolio.</div>
+      <div class="tile" style="flex:0 0 300px;background:#f7f9fa;border-radius:14px;padding:18px;scroll-snap-align:start;box-shadow:0 2px 6px rgba(0,0,0,.06)"><strong>Daniel (35, Jurist)</strong><br>Skepsis → Konzept mit Förderungen & Steueroptimierung, klare ETF-Struktur.</div>
+      <div class="tile" style="flex:0 0 300px;background:#f7f9fa;border-radius:14px;padding:18px;scroll-snap-align:start;box-shadow:0 2px 6px rgba(0,0,0,.06)"><strong>Mira (29, Erzieherin)</strong><br>„Jetzt verstehe ich Geldanlage – selbst mit kleiner Rate sinnvoll.“</div>
+      <div class="tile" style="flex:0 0 300px;background:#f7f9fa;border-radius:14px;padding:18px;scroll-snap-align:start;box-shadow:0 2px 6px rgba(0,0,0,.06)"><strong>Philipp (38, Selbstständig)</strong><br>Volatilität abfedern, Liquiditätsplan + flexibler Sparpfad.</div>
+      <div class="tile" style="flex:0 0 300px;background:#f7f9fa;border-radius:14px;padding:18px;scroll-snap-align:start;box-shadow:0 2px 6px rgba(0,0,0,.06)"><strong>Emily (30, Ärztin)</strong><br>Seit 4 Jahren in Betreuung – Anpassungen bei Jobwechsel & Elternzeit.</div>
     </div>
-    <div class="navbtn nav-left" onclick="scrollTiles(-1)" aria-label="Zurück">‹</div>
-    <div class="navbtn nav-right" onclick="scrollTiles(1)" aria-label="Weiter">›</div>
+    <div class="navbtn" onclick="scrollTiles(-1)" aria-label="Zurück"
+         style="position:absolute;top:50%;transform:translateY(-50%);left:6px;width:40px;height:40px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;background:#ffffffcc;border:1px solid #e5e7eb;backdrop-filter:blur(4px)">‹</div>
+    <div class="navbtn" onclick="scrollTiles(1)" aria-label="Weiter"
+         style="position:absolute;top:50%;transform:translateY(-50%);right:6px;width:40px;height:40px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;background:#ffffffcc;border:1px solid #e5e7eb;backdrop-filter:blur(4px)">›</div>
   </div>
-  <p style="opacity:.7; font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
+  <p style="opacity:.7;font-size:.9rem">Tipp: mit dem Finger swipen oder Pfeile nutzen.</p>
 </section>
-
-<section>
-  <h2>So funktioniert’s</h2>
-  <div class="flow">
-    <div class="step"><strong>1. Termin vereinbaren</strong><br>Online, persönlich oder per WhatsApp.</div>
-    <div class="step"><strong>2. Offenes Gespräch</strong><br>Was ist dir wichtig? Wo willst du hin?</div>
-    <div class="step"><strong>3. Dein Finanzplan</strong><br>Individuell, steueroptimiert, förderfähig.</div>
-  </div>
-</section>
-
-<section style="text-align:center">
-  <a class="btn" href="https://outlook.office.com/bookwithme/user/5ba8b248fa9a46f6a7a5a1a3ca0e91b6@tecis.de?anonymous&ep=plink" target="_blank">Jetzt kostenlos starten</a>
-</section>
-
-<footer>
-  Kostenlos & unverbindlich. DSGVO-konform.
-</footer>
 
 <script>
   function scrollTiles(dir){
@@ -116,6 +65,3 @@
     el.scrollBy({ left: dir * (w + 16), behavior: 'smooth' });
   }
 </script>
-
-</body>
-</html>
